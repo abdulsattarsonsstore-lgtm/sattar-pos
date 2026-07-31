@@ -6,9 +6,7 @@ import Link from "next/link";
 import {
   ArrowLeft,
   Loader2,
-  ReceiptText,
   Printer,
-  ScrollText,
 } from "lucide-react";
 
 type SaleItem = {

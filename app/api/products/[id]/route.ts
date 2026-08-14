@@ -11,24 +11,59 @@ export async function GET(
   request: Request,
   context: RouteContext
 ) {
-  const { id } = await context.params;
+  try {
+    const { id } = await context.params;
+    const productId = Number(id);
 
-  const { data, error } = await supabase
-    .from("products")
-    .select("*")
-    .eq("id", id)
-    .single();
+    if (
+      !Number.isInteger(productId) ||
+      productId <= 0
+    ) {
+      return NextResponse.json(
+        { error: "Invalid product ID." },
+        { status: 400 }
+      );
+    }
 
-  if (error) {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", productId)
+      .maybeSingle();
+
+    if (error) {
+      console.error(
+        "Product GET database error:",
+        error
+      );
+
+      return NextResponse.json(
+        { error: "Unable to load product." },
+        { status: 500 }
+      );
+    }
+
+    if (!data) {
+      return NextResponse.json(
+        { error: "Product not found." },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      product: data,
+    });
+  } catch (error) {
+    console.error(
+      "Product GET API error:",
+      error
+    );
+
     return NextResponse.json(
-      { error: error.message },
+      { error: "Unable to load product." },
       { status: 500 }
     );
   }
-
-  return NextResponse.json({
-    product: data,
-  });
 }
 
 export async function PUT(

@@ -8,6 +8,7 @@ import {
   Search,
   SlidersHorizontal,
   X,
+  Eye,
   Pencil,
   Trash2,
 } from "lucide-react";
@@ -456,6 +457,13 @@ export default function ProductTable() {
 
                       <td className="px-4 py-4 text-right">
                         <div className="flex justify-end gap-2">
+                          <Link
+  href={`/inventory/${product.id}`}
+  className="inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50"
+>
+  <Eye size={14} />
+  View
+</Link>
                           <Link
                             href={`/inventory/${product.id}/edit`}
                             className="inline-flex items-center gap-1.5 rounded-lg border px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50"

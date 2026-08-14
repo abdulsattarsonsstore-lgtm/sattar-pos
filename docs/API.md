@@ -1,4 +1,4 @@
-# API Documentation
+# Abdul Sattar Sons POS - API Documentation
 
 ## Project
 
@@ -6,32 +6,61 @@ Abdul Sattar Sons POS
 
 ---
 
-# API Standards
+# API Architecture
 
-Method Naming
+The POS API is implemented using Next.js App Router Route Handlers.
 
-GET
+All API routes are located under:
 
-POST
+`app/api/`
 
-PUT
+API responses use JSON.
 
-DELETE
-
-All responses return JSON.
+The current API is connected to Supabase PostgreSQL.
 
 ---
 
-# Products
+# API Standards
+
+## HTTP Methods
+
+The current API uses:
+
+- GET
+- POST
+- PUT
+- PATCH
+- DELETE
+
+---
+
+# Products API
+
+## Get Products
+
+### Endpoint
+
+`GET /api/products`
+
+### Purpose
+
+Returns the product list used by inventory and product-search workflows.
+
+---
 
 ## Add Product
 
-POST
+### Endpoint
 
-/api/products/add
+`POST /api/products/add`
 
-Body
+### Purpose
 
+Creates a new product.
+
+### Request Body
+
+```json
 {
   "product_name": "",
   "category": "",
@@ -44,105 +73,4 @@ Body
   "low_stock": 0,
   "description": ""
 }
-
-Response
-
-200 OK
-
----
-
-## Get Products
-
-GET
-
-/api/products
-
-Returns all products.
-
----
-
-## Update Product
-
-PUT
-
-/api/products/update
-
-Updates product information.
-
----
-
-## Delete Product
-
-DELETE
-
-/api/products/delete
-
-Deletes a product.
-
----
-
-# Customers
-
-POST
-
-/api/customers/add
-
-GET
-
-/api/customers
-
-PUT
-
-/api/customers/update
-
-DELETE
-
-/api/customers/delete
-
----
-
-# Sales
-
-POST
-
-/api/sales/create
-
-GET
-
-/api/sales
-
-GET
-
-/api/sales/:id
-
----
-
-# Reports
-
-GET
-
-/api/reports/daily
-
-GET
-
-/api/reports/monthly
-
-GET
-
-/api/reports/profit
-
----
-
-# AI
-
-POST
-
-/api/ai/chat
-
-POST
-
-/api/ai/recommend
-
-POST
-
-/api/ai/paint-calculator
+Future API development will expand reporting, AI, supplier, purchasing and other business capabilities.

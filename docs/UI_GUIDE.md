@@ -10,6 +10,67 @@ The interface should be:
 - Easy for shop staff to use
 - Desktop-first
 - Mobile responsive
+- Consistent across all modules
+- Easy to scan during daily shop operations
+
+The UI should prioritize speed and clarity over unnecessary visual complexity.
+
+---
+
+# Design Principles
+
+## Simplicity
+
+Users should be able to understand the purpose of a screen quickly.
+
+Avoid unnecessary controls, decorative elements and complicated workflows.
+
+---
+
+## Consistency
+
+Common UI elements should behave consistently across:
+
+- Dashboard
+- Inventory
+- Billing
+- Customers
+- Reports
+- Settings
+- AI Assistant
+
+Buttons, forms, tables, dialogs and notifications should follow the same visual language.
+
+---
+
+## Speed
+
+Common shop operations should require as few steps as practical.
+
+Priority workflows include:
+
+- Searching products
+- Adding products
+- Editing products
+- Creating sales
+- Selecting customers
+- Completing payments
+- Viewing sale details
+
+---
+
+## Professional Appearance
+
+The application should look appropriate for a real business environment.
+
+Use:
+
+- Clear hierarchy
+- Consistent spacing
+- Clean tables
+- Readable typography
+- Controlled use of colors
+- Consistent icons
 
 ---
 
@@ -20,7 +81,12 @@ The interface should be:
 Blue
 
 Purpose:
-Buttons, active menu items, links.
+
+- Primary buttons
+- Active navigation
+- Important actions
+- Links
+- Primary interface elements
 
 ---
 
@@ -29,7 +95,11 @@ Buttons, active menu items, links.
 White
 
 Purpose:
-Backgrounds and cards.
+
+- Main backgrounds
+- Cards
+- Forms
+- Panels
 
 ---
 
@@ -38,7 +108,12 @@ Backgrounds and cards.
 Orange
 
 Purpose:
-Alerts, notifications, highlights.
+
+- Alerts
+- Highlights
+- Important secondary information
+
+Orange should be used selectively rather than as the dominant interface color.
 
 ---
 
@@ -47,7 +122,11 @@ Alerts, notifications, highlights.
 Green
 
 Purpose:
-Successful sales, stock available.
+
+- Successful operations
+- Successful sales
+- Available stock
+- Positive status indicators
 
 ---
 
@@ -56,7 +135,10 @@ Successful sales, stock available.
 Yellow
 
 Purpose:
-Low stock.
+
+- Low-stock warnings
+- Attention states
+- Non-critical warnings
 
 ---
 
@@ -65,229 +147,60 @@ Low stock.
 Red
 
 Purpose:
-Delete actions, out of stock, errors.
+
+- Delete actions
+- Out-of-stock states
+- Errors
+- Destructive operations
 
 ---
 
 # Typography
 
-Headings
+## Headings
 
-Bold
+Use bold, clear headings with a strong visual hierarchy.
 
-Body
+---
 
-Readable
+## Body
 
-Numbers
+Body text should be readable and concise.
 
-Monospaced where useful (prices, stock)
+---
+
+## Numbers
+
+Numbers such as:
+
+- Prices
+- Quantities
+- Stock
+- Totals
+- Sales values
+
+should remain highly readable.
+
+Monospaced typography may be used where it improves alignment or scanning.
 
 ---
 
 # Layout
 
+The primary desktop structure is:
+
+```text
 -------------------------------------------------
- Header
--------------------------------------------------
-
- Sidebar | Main Content
-
- Sidebar | Dashboard
- Sidebar | Inventory
- Sidebar | Billing
- Sidebar | Customers
- Sidebar | Reports
- Sidebar | Settings
-
+Header
 -------------------------------------------------
 
----
-
-# Sidebar Menu
-
-🏠 Dashboard
-
-📦 Inventory
-
-🧾 Billing
-
-👥 Customers
-
-📊 Reports
-
-🤖 AI Assistant
-
-⚙ Settings
-
----
-
-# Dashboard Cards
-
-Today's Sales
-
-Monthly Sales
-
-Products
-
-Customers
-
-Low Stock
-
-Profit
-
----
-
-# Inventory Page
-
-Search Bar
-
-Category Filter
-
-Brand Filter
-
-Product Table
-
-Pagination
-
----
-
-# Product Form
-
-Sections:
-
-Product Information
-
-Pricing
-
-Inventory
-
-Additional Details
-
----
-
-# Billing Screen
-
-Search Product
-
-Shopping Cart
-
-Customer
-
-Discount
-
-Payment
-
-Invoice Summary
-
----
-
-# Tables
-
-Columns should be sortable.
-
-Support search.
-
-Support pagination.
-
-Highlight low stock.
-
----
-
-# Icons
-
-Use Lucide React icons.
-
-Examples:
-
-Home
-
-Package
-
-Shopping Cart
-
-Users
-
-Chart
-
-Settings
-
----
-
-# Buttons
-
-Primary
-
-Blue
-
-Secondary
-
-Grey
-
-Danger
-
-Red
-
-Success
-
-Green
-
----
-
-# Forms
-
-Rounded inputs
-
-Consistent spacing
-
-Labels above fields
-
-Required fields marked
-
----
-
-# Notifications
-
-Success
-
-Green
-
-Warning
-
-Yellow
-
-Error
-
-Red
-
-Information
-
-Blue
-
----
-
-# Responsive Behaviour
-
-Desktop
-
-Full Sidebar
-
-Tablet
-
-Collapsed Sidebar
-
-Mobile
-
-Drawer Navigation
-
----
-
-# Future Improvements
-
-Dark Mode
-
-Theme Switcher
-
-Large Font Mode
-
-Keyboard Shortcuts
+Sidebar | Main Content
+
+        | Dashboard
+        | Inventory
+        | Billing
+        | Customers
+        | Reports
+        | Settings
+
+-------------------------------------------------
